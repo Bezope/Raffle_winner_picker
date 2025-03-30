@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        body{
+            align-items: center;
+            justify-content: space-between;
+        }
+        div{
+            text-align: center;
+            align-items: center;
+            margin: auto;
+        }
+        #inp{
+            font-size: medium;
+            margin-top: 5%;
+        }
+        button{
+            font-size: large;
+            padding: 1%;
+            border-radius: 50%;
+            margin: 1%;
+        }
+        #displ{
+            font-size: 200%;
+            font-weight: bold;
+        }
+        #selected{
+            font-size: 750%;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div>    
+        <input type="number" id="inp"><br>
+        <button onclick="Run()">countDown</button><br>
+        <button onclick="pick()">pick</button>
+        <button onclick="redo()">continue</button>
+    </div><br><br>
+    <div>
+        <div id="displ">
+
+        </div>
+        <img src="./js_images/winner.jpeg" alt="golden winner Text image">
+        <div id="selected">
+
+        </div>
+    </div>
+    
+
+<script type="text/javascript">
+    let myInput;
+        let interval;
+        const countDown = ()=>{
+            myInput --;
+            displ.innerText = myInput;
+            if(myInput <= 0){
+                myInput = inp.value;
+                // clearInterval(interval);
+            }
+        }
+        const Run = ()=>{
+            myInput = inp.value;
+            interval = setInterval(countDown, 100);
+        }
+        const pick = ()=>{
+            clearInterval(interval)
+            selected.innerText = myInput;
+        }
+        const redo = ()=>{
+           interval = setInterval(countDown, 100) 
+        }
+</script>
+
+
+
+
+
+
+
+
+
+    <!-- <script type="text/javascript">
+        let n = 0;
+        let ans = document.getElementById('result').innerHTML;
+        function count(){
+                while(n >= 0){
+                    n++
+                    if(n == 101){
+                        n = 0;
+                        
+                    }
+                }
+        }
+        function show(){
+            document.getElementById('result').innerHTML = n;
+            console.log(n);
+        }
+    </script> -->
+</body>
+</html>
