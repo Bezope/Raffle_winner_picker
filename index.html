@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Random number picker</title>
     <style>
         *{
             margin: 0;
@@ -37,13 +37,26 @@
         #selected{
             font-size: 750%;
             font-weight: bolder;
+            width: 25%;
+            border-radius: 30%;
+            animation-name: neon;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes neon{
+            0%{color: black;}
+            30%{color: gold;}
+            50%{background-color: black;}
+            80%{background-color: gold;color: black;}
+            100%{background-color: none;color: black;}
         }
     </style>
 </head>
 
 <body>
     <div>    
-        <input type="number" id="inp"><br>
+        <input type="number" id="inp" placeholder="input range"><br>
         <button onclick="Run()">countDown</button><br>
         <button onclick="pick()">pick</button>
         <button onclick="redo()">continue</button>
@@ -52,7 +65,7 @@
         <div id="displ">
 
         </div>
-        <img src="./js_images/winner.jpeg" alt="golden winner Text image">
+        <img src="./winner.jpeg" alt="golden winner Text image">
         <div id="selected">
 
         </div>
